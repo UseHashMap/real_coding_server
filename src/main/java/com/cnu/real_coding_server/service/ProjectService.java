@@ -36,4 +36,8 @@ public class ProjectService {
             return projectRepository.save(project);
         });
     }
+
+    public void deleteProject(Integer projectId) {
+        projectRepository.findById(projectId).ifPresent(projectRepository::delete);
+    }
 }
